@@ -1,4 +1,5 @@
 ﻿using Demo.Core.Models;
+using Demo.Infrastructure.Nhibernate.Configurations;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -31,7 +32,7 @@ namespace Demo.Infrastructure.Nhibernate
             return Fluently.Configure()
                 .Database(GetSqlConfiguration("DatabaseConnectionString"))
                 .Mappings(m => m.AutoMappings
-                        .Add(AutoMap.AssemblyOf<Person>())
+                        .Add(AutoMap.AssemblyOf<Person>(new AutomappingConfiguration()))
                 )
                 .BuildConfiguration();
         }
