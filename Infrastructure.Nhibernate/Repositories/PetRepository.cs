@@ -16,10 +16,10 @@ namespace Demo.Infrastructure.Nhibernate.Repositories
         {
             using (ISession session = _sessionFactory.OpenSession())
             {
-                using (session.BeginTransaction())
+                using (var transaction = session.BeginTransaction())
                 {
                     session.Save(pet);
-                    session.Transaction.Commit();
+                    transaction.Commit();
                 }
             }
         }
