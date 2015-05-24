@@ -1,5 +1,6 @@
 ﻿using Demo.Core.Models;
 using Demo.Infrastructure.Nhibernate.Configurations;
+using Demo.Infrastructure.Nhibernate.Mappings.Overrides;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -32,7 +33,8 @@ namespace Demo.Infrastructure.Nhibernate
             return Fluently.Configure()
                 .Database(GetSqlConfiguration("DatabaseConnectionString"))
                 .Mappings(m => m.AutoMappings
-                        .Add(AutoMap.AssemblyOf<Person>(new AutomappingConfiguration()))
+                        .Add(AutoMap.AssemblyOf<Pet>(new AutomappingConfiguration())
+                        .UseOverridesFromAssemblyOf<PetMap>())
                 )
                 .BuildConfiguration();
         }
