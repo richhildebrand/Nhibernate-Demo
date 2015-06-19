@@ -9,7 +9,7 @@ namespace Demo.Infrastructure.Nhibernate.Mappings.Overrides
         public void Override(AutoMapping<Pet> mapping)
         {
             mapping.Table("Pets");
-            mapping.Id(x => x.Id).GeneratedBy.Assigned();
+            mapping.Id(x => x.Pet_Id).GeneratedBy.Assigned();
             mapping.Map(x => x.Name).Column("PetName");
         }
     }

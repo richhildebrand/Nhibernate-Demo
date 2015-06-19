@@ -18,13 +18,13 @@ namespace Demo.IntegrationTests.PetRepositoryTests
 
             var pet = new Pet
             {
-                Id = petId,
+                Pet_Id = petId,
                 Name = "Dawg Pound"
             };
 
             petRepository.Save(pet);
 
-            pet.Id.ShouldEqual(petId);
+            pet.Pet_Id.ShouldEqual(petId);
         }
     }
 }

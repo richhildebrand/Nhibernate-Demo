@@ -34,7 +34,9 @@ namespace Demo.Infrastructure.Nhibernate
                 .Database(GetSqlConfiguration("DatabaseConnectionString"))
                 .Mappings(m => m.AutoMappings
                         .Add(AutoMap.AssemblyOf<Pet>(new AutomappingConfiguration())
-                        .UseOverridesFromAssemblyOf<PetMap>())
+                        .UseOverridesFromAssemblyOf<PetMap>()
+                        .Conventions.Add(new PrimaryKeyConvention())
+                    )
                 )
                 .BuildConfiguration();
         }

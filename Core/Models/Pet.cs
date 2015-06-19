@@ -5,7 +5,7 @@ namespace Demo.Core.Models
 {
     public class Pet : IPersistentModel
     {
-        public virtual Guid Id { get; set; }
+        public virtual Guid Pet_Id { get; set; }
         public virtual string Name { get; set; }
     }
 }
