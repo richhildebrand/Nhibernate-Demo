@@ -10,11 +10,22 @@ namespace Demo.IntegrationTests.TestHelpers
         {
             return new House
             {
-                House_Id = id,
+                Id = id,
                 Address = "100 Alfred Lerner Way",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44114"
+            };
+        }
+
+        public static Person CreatePerson(int id, int houseId)
+        {
+            return new Person
+            {
+                Id = id,
+                FirstName = "Bernie",
+                LastName = "Kosar",
+                House = CreateHouse(houseId),
             };
         }
     }

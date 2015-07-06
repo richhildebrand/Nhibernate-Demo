@@ -34,8 +34,8 @@ namespace Demo.Infrastructure.Nhibernate
                 .Database(GetSqlConfiguration("DatabaseConnectionString"))
                 .Mappings(m => m.AutoMappings
                         .Add(AutoMap.AssemblyOf<House>(new AutomappingConfiguration())
-                        .UseOverridesFromAssemblyOf<HouseMap>()
                         .Conventions.Add(new PrimaryKeyConvention())
+                        .Conventions.Add(new CustomForeignKeyConvention())
                     )
                 )
                 .BuildConfiguration();

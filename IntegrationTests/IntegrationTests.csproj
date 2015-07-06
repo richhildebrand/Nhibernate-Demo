@@ -56,9 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContextTests\GetSqlConfigurationShould.cs" />
-    <Compile Include="PersonRepositoryTests\SavePersonShould.cs" />
     <Compile Include="PetRepositoryTests\SavePetShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryTests\GetShould.cs" />
     <Compile Include="RepositoryTests\SaveShould.cs" />
     <Compile Include="TestHelpers\ModelCreator.cs" />
   </ItemGroup>

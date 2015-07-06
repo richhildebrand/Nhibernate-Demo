@@ -49,9 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\AutomappingConfiguration.cs" />
+    <Compile Include="Configurations\CustomForeignKeyConvention.cs" />
     <Compile Include="Configurations\PrimaryKeyConvention.cs" />
     <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Mappings\Overrides\HouseMap.cs" />
     <Compile Include="Mappings\Overrides\PetMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
