@@ -33,8 +33,8 @@ namespace Demo.Infrastructure.Nhibernate
             return Fluently.Configure()
                 .Database(GetSqlConfiguration("DatabaseConnectionString"))
                 .Mappings(m => m.AutoMappings
-                        .Add(AutoMap.AssemblyOf<Pet>(new AutomappingConfiguration())
-                        .UseOverridesFromAssemblyOf<PetMap>()
+                        .Add(AutoMap.AssemblyOf<House>(new AutomappingConfiguration())
+                        .UseOverridesFromAssemblyOf<HouseMap>()
                         .Conventions.Add(new PrimaryKeyConvention())
                     )
                 )

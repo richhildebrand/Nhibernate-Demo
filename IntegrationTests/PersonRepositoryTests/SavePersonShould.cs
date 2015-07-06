@@ -1,30 +1,46 @@
-﻿using Demo.Core.Models;
-using Demo.Infrastructure.Nhibernate;
-using Demo.Infrastructure.Nhibernate.Repositories;
-using NUnit.Framework;
-using Should;
+﻿//using Demo.Core.Models;
+//using Demo.Infrastructure.Nhibernate;
+//using Demo.Infrastructure.Nhibernate.Repositories;
+//using Demo.IntegrationTests.TestHelpers;
+//using NUnit.Framework;
+//using Should;
 
-namespace Demo.IntegrationTests.PersonRepositoryTests
-{
-    [TestFixture]
-    public class SavePersonShould
-    {
-        [Test]
-        public void Save()
-        {
-            var personRepository = new PersonRepository(DatabaseContext.SessionFactory);
+//namespace Demo.IntegrationTests.PersonRepositoryTests
+//{
+//    [TestFixture]
+//    public class SavePersonShould
+//    {
+//        private Repository _repository;
 
-            const int idNotSet = 0;
-            var person = new Person
-            {
-                Id = idNotSet,
-                FirstName = "Bernie",
-                LastName = "Kosar",
-            };
+//        [SetUp]
+//        public void SetUp()
+//        {
+//            _repository = new Repository(DatabaseContext.SessionFactory);
+//        }
 
-            personRepository.Save(person);
+//        [Test]
+//        public void Save()
+//        {
+//            var houseId = CreateAndSaveHouse();
 
-            person.Id.ShouldNotEqual(idNotSet);
-        }
-    }
-}
+//            const int idNotSet = 0;
+//            var person = new Person
+//            {
+//                Person_Id = idNotSet,
+//                FirstName = "Bernie",
+//                LastName = "Kosar",
+//                FK_House_Id = houseId,
+//            };
+
+//            _repository.Save<Person>(person);
+
+//            person.Person_Id.ShouldNotEqual(idNotSet);
+//        }
+//        private int CreateAndSaveHouse()
+//        {
+//            var house = ModelCreator.CreateHouse(ModelCreator.IdNotSet);
+//            _repository.Save<House>(house);
+//            return house.House_Id;
+//        }
+//    }
+//}

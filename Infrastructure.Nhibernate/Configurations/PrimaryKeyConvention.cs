@@ -16,7 +16,7 @@ namespace Demo.Infrastructure.Nhibernate.Configurations
             if (isMappableModel)
             {
                 instance.Column(type.Name + "_Id");
-                instance.GeneratedBy.Assigned();
+                instance.GeneratedBy.Native();
             }
         }
     }
